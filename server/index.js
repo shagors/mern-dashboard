@@ -40,6 +40,6 @@ mongoose.connect(process.env.MONGO_URL, {
 }).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    /* data one time */ 
-    User.insertMany(dataUser);
+    /* Only add data one time from json file */ 
+    // User.insertMany(dataUser);
 }).catch((error) => console.log(`${error} did not connect`));
