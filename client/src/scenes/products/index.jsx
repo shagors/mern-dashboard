@@ -26,7 +26,7 @@ const Product = ({_id, name, description, price, rating, category, supply, stat}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button variant='primary' size='small' onClick={() => setIsExpanded(!setIsExpanded)}>
+                <Button variant='primary' size='small' onClick={() => setIsExpanded(!isExpanded)}>
                     See More
                 </Button>
             </CardActions>
@@ -45,7 +45,6 @@ const Product = ({_id, name, description, price, rating, category, supply, stat}
 const Products = () => {
     const { data, isLoading } = useGetProductsQuery();
     const isNonMobile = useMediaQuery("(min-width: 1000px)");
-    console.log('data', data);
 
   return (
     <Box m="1.5rem 2.5rem">
@@ -65,6 +64,7 @@ const Products = () => {
                     stat
                 }) => (
                     <Product 
+                        key={_id}
                         _id={_id}
                         name={name}
                         description={description}
