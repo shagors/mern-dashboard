@@ -14,7 +14,6 @@ const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
-  console.log(data);
 
   const columns = [
         {
@@ -90,7 +89,7 @@ const Dashboard = () => {
           title="Sales Today"
           value={data && data.todayStats.totalSales}
           increase="+21%"
-          description="Since last month"
+          description="About last 24 hours"
           icon={
             <PointOfSale sx={{color: theme.palette.secondary[300], fontSize: "26px"}} />
           } 
@@ -108,7 +107,7 @@ const Dashboard = () => {
           title="Monthly Sales"
           value={data && data.thisMonthStats.totalSales}
           increase="+5%"
-          description="Since last month"
+          description="Since last Month"
           icon={
             <PersonAdd sx={{color: theme.palette.secondary[300], fontSize: "26px"}} />
           } 
@@ -117,7 +116,7 @@ const Dashboard = () => {
           title="Yearly Sales"
           value={data && data.yearlySalesTotal}
           increase="+43%"
-          description="Since last month"
+          description="Since last Year"
           icon={
             <Traffic sx={{color: theme.palette.secondary[300], fontSize: "26px"}} />
           } 
