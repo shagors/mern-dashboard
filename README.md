@@ -1,4 +1,4 @@
-# MERN dashboard design
+# MERN stack dashboard design --- Full design Image below please check it below
 
 ## Client side design:
     * React
